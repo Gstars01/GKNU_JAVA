@@ -56,3 +56,25 @@ int main(){
         }
 }
 ```
+
+### 1.5 디렉토리 위치 변경하기
+```c
+#include<unistd.h>
+#include<stdlib.h>
+#include<stdio.h>
+int main(){
+        char *cwd;
+        cwd = getcwd(NULL,NUFSIZ);
+        printf("1.Current dir.: %s\n",cwd);
+
+        chdir("han");
+
+        cwd = getcwd(NULL,NUFSIZ);
+        printf("2.Current dir.: %s\n",cwd);
+
+        free(cwd);
+}
+
+```
+
+
