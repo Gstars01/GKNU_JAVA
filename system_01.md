@@ -94,6 +94,24 @@ int main(){
         }
 }
 ```
+### 1.Q1 추가 han 100개 제거하기 
+```c
+  GNU nano 7.2                       redir100.c                                 
+#include<unistd.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+int main(){
+        char result[100];
+        for(int i=0;i<101;i++){
+                sprintf(result,"%s%d","han",i);
+                if(rmdir(result)== -1){
+                        perror("han");
+                        exit(1);
+                }
+        }
+}
+```
 
 
 
