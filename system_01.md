@@ -28,5 +28,31 @@ int main(){
 ```
 ### 1.3 디렉터리 위치 검색하기 
 ```c
+  GNU nano 7.2                         mkdir.c *                                
+#define _GNU_SOURCE 
+#include<unistd.h>
+#include<stdlib.h>
+#include<stdio.h>
 
+int main(){
+        char *cwd;
+        cwd=get_current_dir_name();
+        printf("cwd=%s\n",cwd);
+        free(cwd);
+        return 0;
+}
+```
+### 1.4 디렉토리 이름 변경하기 
+```c
+  GNU nano 7.2                         rndir.c                                  
+#include<sys/stat.h>
+#include<stdlib.h>
+#include<stio.h>
+
+int main(){
+        if(rename("han","bit")==-1){
+                perror("rename");
+                exit(1);
+        }
+}
 ```
